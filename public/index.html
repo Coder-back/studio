@@ -121,25 +121,31 @@
                     <img class="gear-images" src="./Assets/daw.jpg">
                     <h2 class="gear-name">DAW Software</h2>
                     <p>
+                        For our Digital Audio Workstation we use Pro Tools ,great for all sounds at all levels.
                     </p>
                 </div>
 
                 <div class="gear-list" id="music-production">
                     <img class="gear-images" src="./Assets/mic-popfilter.jpg">
                     <h2 class="gear-name">Mic & popfilter</h2>
-                    <p></p>
+                    <p>
+                        Shure SM57 Dynamic Mic with Stedman Proscreen XL pop filter
+                    </p>
                 </div>
 
                 <div class="gear-list" id="sequencer">
                     <img class="gear-images" src="./Assets/sequencer.jpg">
                     <h2 class="gear-name">Sequencer</h2>
-                    <p></p>
+                    <p>
+                        For sequensers we have Digitakt & MPC X
+                    </p>
                 </div>
 
                 <div class="gear-list" id="mixer">
                     <img class="gear-images" src="./Assets/mixer.jpg">
                     <h2 class="gear-name">Sound mixer</h2>
                     <p>
+                        We use Mackie Profx8v2 8-Channel Compact Mixer
                     </p>
                 </div>
 
@@ -147,13 +153,15 @@
                     <img class="gear-images" src="./Assets/studio monitor.jpg">
                     <h2 class="gear-name">studio monitors</h2>
                     <p>
+                        We use KRK Rokit5 G3.
                     </p>
                 </div>
 
                 <div class="gear-list" id="amps">
-                    <img class="gear-images" src="./Assets/amp.jpg">
-                    <h2 class="gear-name">Rockmount Amps</h2>
+                    <img class="gear-images" src="./Assets/rack.webp">
+                    <h2 class="gear-name">Studio Rack Mounts</h2>
                     <p>
+                        Middle Atlantic RK Series Rack Mounts
                     </p>
                 </div>
 
@@ -180,32 +188,36 @@
     <a id="contact"></a>
     <div class="contact">
         <h1>Contact Us</h1>
-        <form action="https://formspree.io/f/xzbkyabg" method="POST">
+        <form action="https://formsubmit.co/cavinekotieno@gmail.com" method="POST">
             <label>
                 Name:
-                <input type="text" name="name" class="name">
+                <input type="text" name="name" class="name" required>
             </label>
 
             <label>
                 Email Address:
-                <input type="email" name="email" class="email" required>
+                <input type="email" name="email" class="email" placeholder="your@gmal.com" required>
             </label>
 
             <label>
                 Subject:
                 <input type="text" name="subject" class="subject">
-            </label>
+                <!-- <select name="studio-service" id="studio-service">
+                    <option value="recording" selected>Recording</option>
+                    <option value="mixing">Mixing</option>
+                    <option value="mastering">Mastering</option>
+                </select>
+            </label> -->
+                <label>
+                    Message:
+                    <textarea name="message" class="message" placeholder="write your message here"></textarea>
+                </label>
 
-            <label>
-                Message:
-                <textarea name="message" class="message"></textarea>
-            </label>
+                <div class="status">
 
-            <div class="status">
+                </div>
 
-            </div>
-
-            <button type="submit" class="submit">Submit</button>
+                <button type="submit" class="submit">Submit</button>
         </form>
     </div>
 
@@ -222,7 +234,9 @@
         <a href="https://www.instagram.com/_cav_ine/" target="_blank"><i class="fa fa-instagram"
                 aria-hidden="true"></i></a>
         <br>
-        <p>Copyright ©2023 Bounce Studios</p>
+        <p>Copyright &copy;2023 -
+            <?php echo date("Y");?> Bounce Studios
+        </p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
