@@ -232,6 +232,10 @@ h1 {
   padding: 10px;
 }
 
+.blocks .block .rates {
+  color: #e94560;
+}
+
 .gear {
   width: 100%;
   background-color: #f7f2f2;
