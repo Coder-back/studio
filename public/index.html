@@ -28,13 +28,16 @@
             <button><i class="fa fa-bars" aria-hidden="true"></i></button>
         </div>
 
-        <div class="nav">
+        <div class="nav" id="nav">
             <ul>
                 <li><a href="#home" class="active menu_link" onclick="menu_hide()">Home</a></li>
                 <li><a href="#about" onclick="menu_hide()" class="menu_link">About</a></li>
                 <li><a href="#services" onclick="menu_hide()" class="menu_link">Services</a></li>
                 <li><a href="#works" onclick="menu_hide()" class="menu_link">Work</a></li>
                 <li><a href="#contact" onclick="menu_hide()" class="menu_link">Contact</a></li>
+                <li><a href="singnUp.html" onclick="menu_hide()" class="menu_link">Sign Up</a></li>
+
+
             </ul>
         </div>
     </div>
@@ -57,7 +60,7 @@
         <img src="./Assets/about image.jpg" alt="picture of studio workstation"
             class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 
-        <div id="content" class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+        <div id="about-content" class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <h1>About Us</h1>
 
             <p>
@@ -190,6 +193,69 @@
 
     </div>
 
+    <!-- reviews section -->
+    <section id="reviews">
+        <h3>Reviews</h3>
+        <div class="card">
+            <div class="avatar">
+                <img src="https://via.placeholder.com/64" alt="User Avatar">
+            </div>
+            <div class="content">
+                <h4>Jme Meg</h4>
+                <div class="rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <p>"I had a great experience recording my music at this studio. The staff was friendly and professional,
+                    and the quality of the recording was top-notch."</p>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="avatar">
+                <img src="https://via.placeholder.com/64" alt="User Avatar">
+            </div>
+            <div class="content">
+                <h4>Mike Smith</h4>
+                <div class="rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <p>"This is the best studio I've ever recorded in. The equipment is top-of-the-line, and the sound
+                    engineer really knows what he's doing."</p>
+
+            </div>
+        </div>
+        <div class="write-review">
+            <form action="" method="post">
+                <h4>Leave a Review</h4>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br></br>
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="5">5 stars</option>
+                    <option value="4">4 stars</option>
+                    <option value="3">3 stars</option>
+                    <option value="2">2 stars</option>
+                    <option value="1">1 star</option>
+                </select>
+                <br></br>
+                <label for="review">Review:</label>
+                <textarea id="review" name="review" required></textarea>
+                <br></br>
+                <input type="submit" value="Submit Review" id="reviw-button">
+            </form>
+        </div>
+    </section>
+
+
     <!--Contact section-->
     <a id="contact"></a>
     <div class="contact">
@@ -241,7 +307,7 @@
                 aria-hidden="true"></i></a>
         <br>
         <p>Copyright &copy;2023 -
-            <?php echo date("Y");?> Bounce Studios
+            <?php echo date("Y"); ?> Bounce Studios
         </p>
     </div>
 
