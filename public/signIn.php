@@ -1,3 +1,45 @@
+<?php
+session_start();
+  
+   include("connection.php");
+ 
+
+// Check if the form has been submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // Get the submitted username and password
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+
+
+    // Check for errors
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+
+    // Build the query to check the user's credentials
+    $query = "SELECT * FROM users WHERE user_name='$username' AND password='$password'";
+
+    // Run the query
+    $result = $con->query($query);
+
+    // Check if the login was successful
+    if ($result->num_rows > 0) {
+        // Login successful, set the session variable
+        $_SESSION['username'] = $username;
+        header('Location: index.php');
+    } else {
+        // Login failed, display an error message
+        echo "<p>Invalid username or password.</p>";
+    }
+
+    // Close the database connection
+    $con->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +73,7 @@
 
       <input type="submit" value="Sign In">
       <br></br>
-      <p>No user account?<a href="singnUp.html">Sign Up</a></p>
+      <p>Don't have an account?<a href="singnUp.php">Sign Up</a></p>
     </form>
   </body>
 </div>
