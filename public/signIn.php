@@ -14,15 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     // Check for errors
-    if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
 
     // Build the query to check the user's credentials
     $query = "SELECT * FROM users WHERE user_name='$username' AND password='$password'";
 
     // Run the query
-    $result = $con->query($query);
+    $result = $conn->query($query);
 
     // Check if the login was successful
     if ($result->num_rows > 0) {
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Close the database connection
-    $con->close();
+    $conn->close();
 }
 ?>
 
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
       <br></br>
-      <p>Forgot password?<a href="resetPassword.html">Reset password</a></p>
+      <p>Forgot password?<a href="resetPassword.php">Reset password</a></p>
 
       <input type="submit" value="Sign In">
       <br></br>

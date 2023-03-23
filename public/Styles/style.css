@@ -181,6 +181,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  backdrop-filter: blur(10px);
   margin-top: 10vh;
   width: 100%;
   height: 90vh;
@@ -224,12 +225,13 @@ body {
   padding: 15px;
   margin-top: 20px;
   color: white;
+  margin-bottom: 20px;
 }
 
 .landing_page #work:hover {
   background-color: white;
-  border: 1px solid white;
-  color: #16213e;
+  background-color: #f18194;
+  color: white;
   text-decoration: none;
 }
 
@@ -255,6 +257,7 @@ body {
   color: white;
   background-color: #16213e;
   padding-top: 10vh;
+  width: 100%
 }
 
 h1 {
@@ -341,6 +344,7 @@ h1 {
   text-align: left
 }
 
+
 .work {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -370,25 +374,14 @@ h1 {
   padding: 20px;
 }
 
-/* reviews */
-#reviews {
-  background-color: #f5f5f5;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-#reviews h3 {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
+/* reviws */
 .card {
   display: flex;
   margin-bottom: 20px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
 }
 
 .avatar {
@@ -405,14 +398,12 @@ h1 {
 
 }
 
-.write-review {
-  align-content: center;
-}
 
-.content h4 {
+.content h2 {
   margin: 0;
   margin-bottom: 5px;
   font-size: 20px;
+  text-align: center;
 
 }
 
@@ -420,19 +411,21 @@ h1 {
   border: 1px solid #e94560;
   border-radius: 20px;
   background-color: #e94560;
-  padding: 8px;
+  padding: 10px;
   margin-top: 20px;
   color: white;
+  margin-top: 20px;
 }
 
 #reviw-button:hover {
   background-color: white;
-  border: 1px sold black;
-  color: #16213e;
+  background-color: #f18194;
+  color: white;
   text-decoration: none;
 }
 
 /* end */
+
 
 .contact {
   display: -webkit-box;
@@ -448,9 +441,10 @@ h1 {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: none;
+  background-color: #f7f2f2;
   padding: 20px;
   padding-top: 10vh;
+  margin-top: 20px;
 }
 
 .contact h1 {
@@ -473,6 +467,7 @@ h1 {
   flex-direction: column;
   background-color: none;
   padding: 20px;
+  width: 80%S;
 }
 
 .contact form label {
@@ -495,27 +490,36 @@ h1 {
 
 .contact form label input {
   width: 100%;
+  border-radius: 6px;
 }
 
 .contact form label textarea {
   width: 110%;
+  border-radius: 6px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border: 2px solid #16213e;
 }
 
 .contact form button {
   border: 1px solid #e94560;
   border-radius: 20px;
   background-color: #e94560;
-  padding: 15px;
+  padding: 10px;
   margin-top: 20px;
   color: white;
 }
 
 .contact form button:hover {
   background-color: white;
-  border: 1px sold black;
-  color: #16213e;
+  background-color: #f18194;
+  color: white;
   text-decoration: none;
 }
+
 
 #map {
   width: 100%;
@@ -575,8 +579,8 @@ h1 {
     background-color: #16213e;
     position: absolute;
     margin-top: 10vh;
-    width: 100%;
-    height: 90vh;
+    width: 50%;
+    height: 70vh;
     font-size: 15px;
     left: 0%;
     -webkit-transform: translateX(-100%);
@@ -589,7 +593,7 @@ h1 {
   }
 
   .header .nav ul li {
-    padding: 10%;
+    padding: 7%;
   }
 
   .header .nav ul li a {
@@ -652,7 +656,7 @@ h1 {
   }
 
   .landing_page #work {
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .blocks {
@@ -744,8 +748,8 @@ h1 {
     background-color: #16213e;
     margin-top: 12.5vh;
     position: absolute;
-    width: 100%;
-    height: 85vh;
+    width: 50%;
+    height: 70vh;
     font-size: 15px;
     left: 0%;
     -webkit-transform: translateX(-100%);
@@ -810,7 +814,7 @@ h1 {
   }
 
   .landing_page #work {
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .blocks {
@@ -875,26 +879,6 @@ h1 {
   }
 }
 
-/* styles for desktop */
-.container {
-  width: 1000px;
-  margin: 0 auto;
-}
 
-/* styles for tablet */
-@media (max-width: 768px) {
-  .container {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-
-/* styles for mobile */
-@media (max-width: 480px) {
-  .container {
-    width: 100%;
-    margin: 0;
-  }
-}
 
 /*# sourceMappingURL=style.css.map */

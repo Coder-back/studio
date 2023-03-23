@@ -6,7 +6,7 @@ $_SESSION;
 include("connection.php");
 // include("functions.php");
 
-$user_data = check_login($con);
+// $user_data = check_login($conn);
 
 ?>
 
@@ -47,7 +47,7 @@ $user_data = check_login($con);
         <li><a href="#services" onclick="menu_hide()" class="menu_link">Services</a></li>
         <li><a href="#works" onclick="menu_hide()" class="menu_link">Work</a></li>
         <li><a href="#contact" onclick="menu_hide()" class="menu_link">Contact</a></li>
-        <li><a href="singnUp.php" onclick="menu_hide()" class="menu_link">Sign Up</a></li>
+        <li><a href="signIn.php" onclick="menu_hide()" class="menu_link">Sign In</a></li>
 
 
       </ul>
@@ -61,7 +61,7 @@ $user_data = check_login($con);
 
     <h3>Welcome To Bounce Recording and Production Studio </h3>
 
-    <a href="#works" id="work">Check our work</a>
+    <a href="#works" id="work">Listen to our work</a>
   </div>
 
   <!--Content section-->
@@ -89,7 +89,7 @@ $user_data = check_login($con);
   <a id="services"></a>
   <!--Services page-->
   <div class="services">
-    <h1>Services For You</h1>
+    <h1>What We Do For You</h1>
 
     <div class="blocks">
       <div class="block">
@@ -135,7 +135,7 @@ $user_data = check_login($con);
 
   <section>
     <main>
-      <h1 style="text-align: center;">Our Gears</h1>
+      <h1 style="text-align: center; background-color:#16213e; color:white">Our Gears</h1>
       <div class="gear">
 
         <div class="gear-list" id="daw-software">
@@ -188,8 +188,8 @@ $user_data = check_login($con);
 
       </div>
     </main>
-
   </section>
+
   <!--Work page-->
   <a id="works"></a>
   <div class="work">
@@ -207,13 +207,13 @@ $user_data = check_login($con);
 
   <!-- reviews section -->
   <section id="reviews">
-    <h3>Reviews</h3>
+    <h1>Reviews</h1>
     <div class="card">
       <div class="avatar">
-        <img src="https://via.placeholder.com/64" alt="User Avatar">
+        <img src="./Assets/smith.jpg" alt="Smith headshot">
       </div>
       <div class="content">
-        <h4>Jme Meg</h4>
+        <h4>Jme Smith</h4>
         <div class="rating">
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star checked"></span>
@@ -221,17 +221,17 @@ $user_data = check_login($con);
           <span class="fa fa-star"></span>
           <span class="fa fa-star"></span>
         </div>
-        <p>"I had a great experience recording my music at this studio. The staff was friendly and professional,
-          and the quality of the recording was top-notch."</p>
+        <p>I had a great experience recording my music at this studio. The staff was friendly and professional,
+          and the quality of the recording was top-notch.</p>
 
       </div>
     </div>
     <div class="card">
       <div class="avatar">
-        <img src="https://via.placeholder.com/64" alt="User Avatar">
+        <img src="./Assets/rafat.png" alt="Sande headshot">
       </div>
       <div class="content">
-        <h4>Mike Smith</h4>
+        <h4>Q Sande</h4>
         <div class="rating">
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star checked"></span>
@@ -239,14 +239,14 @@ $user_data = check_login($con);
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star"></span>
         </div>
-        <p>"This is the best studio I've ever recorded in. The equipment is top-of-the-line, and the sound
-          engineer really knows what he's doing."</p>
+        <p>This is the best studio I've ever recorded in. The equipment is top-of-the-line, and the sound
+          engineer really knows what he's doing.</p>
 
       </div>
     </div>
-    <div class="write-review">
-      <form action="" method="post">
-        <h4>Leave a Review</h4>
+    <div>
+      <form action="reviews.php" method="POST">
+        <h2 style="text-align:center;">Leave a Review</h2>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <br></br>
@@ -272,29 +272,24 @@ $user_data = check_login($con);
   <a id="contact"></a>
   <div class="contact">
     <h1>Contact Us</h1>
-    <form action="https://formsubmit.co/cavinekotieno@gmail.com" method="POST">
+    <form action="booking.php" method="POST">
       <label>
         Name:
-        <input type="text" name="name" class="name" required>
+        <input type="text" name="name" class="name" placeholder="Your name" required>
       </label>
 
       <label>
         Email Address:
-        <input type="email" name="email" class="email" placeholder="your@gmal.com" required>
+        <input type="email" name="email" class="email" placeholder="Your email" required>
       </label>
 
       <label>
         Subject:
         <input type="text" name="subject" class="subject">
-        <!-- <select name="studio-service" id="studio-service">
-                    <option value="recording" selected>Recording</option>
-                    <option value="mixing">Mixing</option>
-                    <option value="mastering">Mastering</option>
-                </select>
-            </label> -->
+
         <label>
           Message:
-          <textarea name="message" class="message" placeholder="write your message here"></textarea>
+          <textarea name="message" class="message" placeholder="Write your message here"></textarea>
         </label>
 
         <div class="status">
@@ -316,7 +311,7 @@ $user_data = check_login($con);
 
 
     <a href="https://www.instagram.com/_bounce_studios/" target="_blank"><i class="fa fa-instagram"
-        aria-hidden="true"></i></a>
+        aria-hidden="true"></i>Check our IG page</a>
     <br>
     <p>Copyright &copy;2023 -
       <?php echo date("Y"); ?> Bounce Studios

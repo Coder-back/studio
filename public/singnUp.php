@@ -15,10 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validate the form data
     $errors = [];
 
-
     if (empty($username)) {
       $errors[] = "Username is required";
-  }
+    } else if (!preg_match('/^[a-zA-Z0-9_-]+$/', $username)) {
+      $errors[] = "Invalid username. Only alphanumeric characters, hyphens, and underscores are allowed.";
+    }
+    
     if (empty($email)) {
         $errors[] = "Email is required";
     } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -37,24 +39,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         // Check for errors
-        if ($con->connect_error) {
-            die("Connection failed: " . $con->connect_error);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
         }
 
         // Build the query to insert the user
         $query = "INSERT INTO users ( user_name, email, password) VALUES ('$username', '$email', '$password')";
 
         // Run the query 
-        if ($con->query($query) === TRUE) {
+        if ($conn->query($query) === TRUE) {
             // Registration successful, redirect to login page
             header('Location: SignIn.php');
         } else {
             // Registration failed, display an error message
-            echo "<p>Error: " . $query . "<br>" . $con->error . "</p>";
+            echo "<p>Error: " . $query . "<br>" . $conn->error . "</p>";
         }
 
         // Close the database connection
-        $con->close();
+        $conn->close();
     } else {
         // Display the validation errors
         foreach ($errors as $error) {

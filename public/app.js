@@ -34,26 +34,14 @@ $(document).ready(function () {
     })
 })
 
-// const menuButton = document.getElementById(".menu-button");
-// const menu = document.getElementById(".nav");
 
 //menu button
 function menu() {
     document.querySelector(".nav ul").classList.toggle("show");
-    // menuButton.addEventListener("click", () => {
-    //     menu.style.display = "block";
-    // });
 }
-
 
 //menu hide 
 function menu_hide() {
     document.querySelector(".nav ul").classList.toggle("show");
-    // menuButton.addEventListener("click", () => {
-    //     menu.style.display = "none";
-    // });
-
 }
-
-
 
