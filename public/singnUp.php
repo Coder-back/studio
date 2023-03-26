@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
+    $account_type = $_POST['account_type'];
+
 
     // Validate the form data
     $errors = [];
@@ -44,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         // Build the query to insert the user
-        $query = "INSERT INTO users ( user_name, email, password) VALUES ('$username', '$email', '$password')";
+        $query = "INSERT INTO users ( user_name, email, password, account_type) VALUES ('$username', '$email', '$password', '$account_type')";
 
         // Run the query 
         if ($conn->query($query) === TRUE) {
@@ -104,6 +106,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <label for="confirm_password">Confirm Password:</label>
       <input type="password" id="confirm_password" name="confirm_password" required>
       <br></br>
+
+      <label>
+        Account type:
+        <select name="account_type" required>
+          <option value="">Select account type</option>
+          <option value="admin">Admin</option>
+          <option value="client">Client</option>
+        </select>
+      </label>
+
       <input type="submit" value="Sign Up">
       <br></br>
       <p>Already have an account?<a href="signIn.php">Sign In</a></p>

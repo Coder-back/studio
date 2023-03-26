@@ -142,7 +142,7 @@ include("connection.php");
           <img class="gear-images" src="./Assets/daw.jpg">
           <h2 class="gear-name">DAW Software</h2>
           <p>
-            For our Digital Audio Workstation we use Pro Tools ,great for all sounds at all levels.
+            Pro Tools ,great for all sounds at all levels.
           </p>
         </div>
 
