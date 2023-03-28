@@ -61,7 +61,7 @@ include("connection.php");
 
     <h3>Welcome To Bounce Recording and Production Studio </h3>
 
-    <a href="#works" id="work">Listen to our work</a>
+    <a href="#contact" id="work">Book Session</a>
   </div>
 
   <!--Content section-->
