@@ -301,9 +301,9 @@ include("connection.php");
   </div>
 
   <div class="col-12" id="map">
-    <iframe src="https://maps.google.com/maps?q=Kisumu%20milimani%20&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1eROxgryc4PgtUhTs6w8anV0MrvgpjKU&ehbc=2E312F"
       frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-  </div>
+    </div>
 
   <div class="footer">
     <p><i>Email: bouncestudios@gmail.com<br>
@@ -311,7 +311,7 @@ include("connection.php");
 
 
     <a href="https://www.instagram.com/_bounce_studios/" target="_blank"><i class="fa fa-instagram"
-        aria-hidden="true"></i>Check our IG page</a>
+        aria-hidden="true"></i> Check our IG page</a>
     <br>
     <p>Copyright &copy;2023 -
       <?php echo date("Y"); ?> Bounce Studios
