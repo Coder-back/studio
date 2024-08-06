@@ -1,0 +1,492 @@
+@mixin flexCenter($direction, $background) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background-color: $background;
+}
+
+@import "./colors.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    height: auto;
+    overflow-x: hidden;
+}
+
+
+//Navigation section
+
+.header {
+    @include flexCenter(row, none);
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+
+    .logo {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+
+        a {
+            color: $black;
+            font-weight: 700;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .nav {
+        height: 10vh;
+
+        ul {
+            height: 10vh;
+            display: flex;
+            align-items: center;
+
+            li {
+                display: inline;
+                padding: 0 40px 0 40px;
+
+                a {
+                    color: $black;
+
+                    &:hover {
+                        color: $grey;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu {
+        display: none;
+
+        button {
+            color: $black;
+            background-color: white;
+            border: 0;
+            font-size: 20px;
+            outline: none;
+        }
+    }
+}
+
+//Landing Page section
+.landing_page {
+    background-image: url("../Assets/studio_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-top: 10vh;
+    width: 100%;
+    height: 90vh;
+    color: white;
+    @include flexCenter(column, none);
+    text-align: center;
+    justify-content: space-evenly;
+
+    h1 {
+        font-size: 100px;
+        padding: 30px;
+        color: white;
+    }
+
+    h3 {
+        font-size: 25px;
+        padding: 20px;
+        background-color: rgba(15, 52, 96, 0.7);
+    }
+
+    #work {
+        border: 1px solid $red;
+        border-radius: 20px;
+        background-color: $red;
+        padding: 15px;
+        margin-top: 20px;
+        color: white;
+
+        &:hover {
+            background-color: white;
+            border: 1px solid white;
+            color: $navy;
+            text-decoration: none;
+        }
+    }
+}
+
+//main section
+
+//About section
+#about {
+    @include flexCenter(row, none);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    color: white;
+    background-color: $navy;
+    padding-top: 10vh;
+}
+
+//All Headings H1
+h1 {
+    font-size: 40px;
+}
+
+//Services section
+.services {
+    text-align: center;
+    padding: 20px;
+    color: $black;
+    padding-top: 10vh;
+
+    h1 {
+        color: $black;
+    }
+}
+
+.blocks {
+    @include flexCenter(row, none);
+    text-align: center;
+
+    .block {
+        padding: 10px;
+    }
+}
+
+//Work section
+
+.work {
+    @include flexCenter(column, $navy);
+    padding: 20px;
+    padding-top: 10vh;
+
+    h1 {
+        color: white;
+    }
+
+    iframe {
+        width: 50%;
+        height: 80vh;
+        padding: 20px
+    }
+}
+
+//Contact section
+.contact {
+    @include flexCenter(column, none);
+    padding: 20px;
+    padding-top: 10vh;
+
+    h1 {
+        color: $black;
+    }
+
+    form {
+        @include flexCenter(column, none);
+        padding: 20px;
+
+        label {
+            @include flexCenter(column, none);
+            color: $black;
+
+            input {
+                width: 100%;
+            }
+
+            textarea {
+                width: 110%;
+            }
+        }
+
+        button {
+            border: 1px solid $red;
+            border-radius: 20px;
+            background-color: $red;
+            padding: 15px;
+            margin-top: 20px;
+            color: white;
+
+            &:hover {
+                background-color: white;
+                border: 1px solid white;
+                color: $navy;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#map {
+    width: 100%;
+    text-align: center;
+
+    iframe {
+        padding: 20px;
+        width: 50%;
+        height: 500px;
+    }
+}
+
+//Footer section
+
+.footer {
+    @include flexCenter(column, none);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    background-color: $navy;
+
+    a {
+        color: white;
+
+        &:hover {
+            color: $grey;
+        }
+    }
+}
+
+
+//responsive for mobile
+
+@media only screen and (max-width: 550px) {
+
+    //header section
+    .header .nav ul {
+        //display: none;
+        @include flexCenter(column, $navy);
+        position: absolute;
+        margin-top: 10vh;
+        width: 50%;
+        height: 70vh;
+        font-size: 15px;
+        left: 0%;
+        transform: translateX(-100%);
+        transition: transform 0.8s ease-in-out;
+        overflow: hidden;
+
+        li {
+            padding: 10%;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .nav {
+        height: 0;
+        padding: 0;
+    }
+
+    .header .nav ul.show {
+        transform: translateX(0%);
+    }
+
+    .header .logo {
+        @include flexCenter(row, none);
+        padding-top: 0;
+    }
+
+    .header .menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+
+    .header {
+        height: 10%;
+        padding: 5%;
+    }
+
+    //landing page section
+    .landing_page {
+        justify-content: space-evenly;
+        height: 90vh;
+
+        h1 {
+            font-size: 40px;
+            padding: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        #work {
+            font-size: 10px;
+        }
+    }
+
+    //services section
+    .blocks {
+        @include flexCenter(column, none);
+        text-align: center;
+
+        .block {
+            padding: 10px;
+        }
+    }
+
+    //about section
+    #about {
+        @include flexCenter(column, none);
+        padding-top: 5vh;
+
+        #content {
+            padding-top: 20px;
+        }
+    }
+
+    //services section
+    .block p {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    //work section
+    .work iframe {
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    //contact section
+    #map iframe {
+        width: 100%;
+    }
+}
+
+//responsive for mobile horizontal
+
+@media only screen and (max-width: 850px) and (min-width: 560px) {
+    .header {
+        height: 15vh;
+    }
+
+    .landing_page {
+        height: 150vh;
+    }
+
+
+    //header section
+    .header .nav ul {
+        //display: none;
+        @include flexCenter(column, $navy);
+        margin-top: 12.5vh;
+        position: absolute;
+        width: 50%;
+        height: 70vh;
+        font-size: 15px;
+        left: 0%;
+        transform: translateX(-100%);
+        transition: transform 0.8s ease-in-out;
+        overflow: hidden;
+
+        li {
+            padding: 2%;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .header .nav ul.show {
+        transform: translateX(0%);
+    }
+
+    .header .logo {
+        @include flexCenter(row, none);
+        padding-top: 0;
+    }
+
+    .header .menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+
+    //landing page section
+    .landing_page {
+        justify-content: space-evenly;
+
+        h1 {
+            font-size: 60px;
+            padding: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        #work {
+            font-size: 10px;
+        }
+    }
+
+    //services section
+    .blocks {
+        @include flexCenter(column, none);
+        text-align: center;
+
+        .block {
+            padding: 10px;
+        }
+    }
+
+    //about section
+    #about {
+        @include flexCenter(column, none);
+
+        #content {
+            padding-top: 20px;
+        }
+    }
+
+    //services section
+    .block p {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    //work section
+    .work iframe {
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    //contact section
+    #map iframe {
+        width: 100%;
+    }
+}
